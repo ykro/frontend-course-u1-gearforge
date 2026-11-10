@@ -1,5 +1,5 @@
-// Tests PÚBLICOS del reto: una muestra del contrato. La nota también usa tests
-// ocultos con otros datos y más casos borde.
+// Tests PÚBLICOS del reto: una muestra del contrato. El contrato completo del
+// README tiene otros datos y más casos borde.
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";

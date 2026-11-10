@@ -1,4 +1,4 @@
-// Setup oficial de los tests. No lo modifiques: el calificador usa su propia copia.
+// Setup oficial de los tests. No lo modifiques: es parte de la suite oficial.
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
 import { afterEach, beforeEach, vi } from "vitest";
