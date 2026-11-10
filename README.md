@@ -1,4 +1,4 @@
-# GearForge Studio — Proyecto base del alumno (Curso 2, Unidad 1)
+# GearForge Studio — Proyecto base del alumno (Unidad 1)
 
 GearForge Studio es un configurador de workstations para un estudio de diseño en Guatemala: un catálogo de componentes con filtros, una build que suma precio y consumo, un panel de compatibilidad y un formulario para pedir cotización. Usa React 19, Vite, TypeScript estricto, Tailwind CSS v4, componentes de shadcn/ui copiados en `src/components/ui`, React Hook Form y Zod 4.
 
