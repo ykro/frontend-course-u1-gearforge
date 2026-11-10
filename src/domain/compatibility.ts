@@ -4,14 +4,14 @@ import type { Build, CompatibilityIssue } from "./types";
 export const PSU_MARGIN_PERCENT = 30;
 
 /**
- * Reto. Potencia mínima de fuente para un consumo dado (contrato en el README).
+ * Reto. Potencia mínima de fuente para un consumo dado (contrato en la guía del reto).
  */
 export function requiredPsuWatts(_totalWatts: number): number {
   throw new Error("Pendiente: reto (requiredPsuWatts).");
 }
 
 /**
- * Reto. Reglas de compatibilidad de la build (contrato en el README).
+ * Reto. Reglas de compatibilidad de la build (contrato en la guía del reto).
  * Mientras no la implementes devuelve una lista vacía para que la app no se
  * caiga: el panel de compatibilidad dirá que no hay problemas.
  */

@@ -14,7 +14,7 @@ interface BuildOrderFormProps {
  * Reto, parte C. La maqueta ya tiene los campos con sus etiquetas, `OrderField`
  * (campo con error accesible) y `DeliveryOptions` (radios de Radix), pero
  * todavía no valida ni envía nada. Conéctala con React Hook Form y
- * `createOrderSchema` siguiendo el contrato del README.
+ * `createOrderSchema` siguiendo el contrato de la guía del reto.
  */
 export function BuildOrderForm(_props: BuildOrderFormProps) {
   return (

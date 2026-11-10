@@ -8,7 +8,7 @@ export interface OrderContext {
 }
 
 /**
- * Reto. Esquema de la cotización (contrato en el README). Recibe el total de
+ * Reto. Esquema de la cotización (contrato en la guía del reto). Recibe el total de
  * la build porque una de las reglas cruzadas compara el presupuesto con ese total.
  */
 export function createOrderSchema(

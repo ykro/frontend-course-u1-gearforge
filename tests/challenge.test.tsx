@@ -1,5 +1,5 @@
 // Tests PÚBLICOS del reto: una muestra del contrato. El contrato completo del
-// README tiene otros datos y más casos borde.
+// guía del reto tiene otros datos y más casos borde.
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";

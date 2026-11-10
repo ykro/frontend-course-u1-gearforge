@@ -3,7 +3,7 @@ import { formatGtq } from "./format";
 /** Presupuesto máximo que acepta el formulario, en quetzales. */
 export const MAX_BUDGET_GTQ = 500_000;
 
-/** Mensajes exactos del contrato del reto (README, sección "Mensajes"). */
+/** Mensajes exactos del contrato del reto (guía del reto, sección "Mensajes"). */
 export const ORDER_MESSAGES = {
   customerName: "Escribe tu nombre completo (de 3 a 80 caracteres).",
   email: "Escribe un correo válido, por ejemplo ana@estudio.gt.",
