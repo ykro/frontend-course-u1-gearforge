@@ -28,7 +28,7 @@ Antes de entregar corre siempre `npm run verify`. Si `format:check` falla, ejecu
 | `tests/challenge.test.tsx` | 8 tests **públicos** del reto (una muestra) | Rojo |
 | `tests/student/my-scenarios.test.tsx` | Tus tests propios (2 plantillas que fallan) | Rojo |
 
-Los archivos oficiales (`tests/setup.ts`, `tests/factories.ts`, `tests/*.test.tsx`), la configuración del proyecto y `.github/workflows/ci.yml` no se modifican. El calificador usa siempre su propia copia y reporta cualquier cambio como sospecha de integridad. Tú editas `src/` y `tests/student/`.
+Los archivos oficiales (`tests/setup.ts`, `tests/factories.ts`, `tests/*.test.tsx`), la configuración del proyecto y `.github/workflows/ci.yml` no se modifican. Cambiarlos cuenta como sospecha de integridad en la rúbrica. Tú editas `src/` y `tests/student/`.
 
 ## Parte 1. Taller guiado (60 minutos)
 
@@ -122,38 +122,21 @@ Tus tests propios suman si pasan contra la solución de referencia y detectan mu
 
 Responde `ARCHITECTURE_DECISIONS.md` (incluye ampliar `AGENTS.md` con una regla propia y la declaración de uso de IA) y marca con criterio `SECURITY_AND_QUALITY.md`.
 
-## Cómo se califica (100 puntos)
+## Rúbrica (100 puntos)
 
 | Componente | Puntos | Cómo se mide |
 | :--- | ---: | :--- |
 | Taller guiado | 20 | `tests/workshop.test.tsx`, proporcional |
 | Reto, tests públicos | 10 | `tests/challenge.test.tsx`, proporcional |
-| Reto, tests ocultos | 30 | tests ocultos, proporcional |
+| Reto, contrato completo | 30 | los casos del contrato que los tests públicos no cubren, con más bordes y datos distintos, proporcional |
 | Tests propios | 15 | pasan contra la referencia y detectan mutantes que la suite pública no detecta; los errores sembrados se agrupan por concepto: 2 conceptos distintos detectados = completo, 1 = mitad |
 | ADR y checklist | 15 | revisión manual: ADR 10, checklist 2, sección propia de `AGENTS.md` 2 y declaración de uso de IA 1 |
 | Calidad e integridad | 10 | `typecheck`, `lint` y `format:check` limpios (5) + sin sospechas de integridad (5) |
 | **Total** | **100** | |
 
-**La nota no sale de tu CI.** El workflow de GitHub Actions solo te da retroalimentación. El calificador del curso calcula la nota sobre una copia limpia del proyecto: toma tu `src/`, tus tests propios y tus documentos, y corre los tests oficiales más un conjunto de **tests ocultos** del reto con otros datos y más casos borde. Te lo decimos de frente para que no pierdas tiempo: memorizar las respuestas de `challenge.test.tsx` o detectar si el código corre bajo el runner de pruebas no sirve, y además se reporta. Implementa el contrato completo y pruébalo con tus propios casos.
+**La CI no es todo el reto.** El workflow de GitHub Actions corre los tests oficiales y te da retroalimentación, pero los tests públicos del reto son una muestra: el contrato completo tiene más casos borde y otros datos. Memorizar las respuestas de `challenge.test.tsx` o detectar si el código corre bajo el runner de pruebas no sirve. Implementa el contrato completo y pruébalo con tus propios casos.
 
 Se marca como sospecha de integridad: modificar archivos oficiales (tests, setup, fábricas, configuración o workflow), agregar archivos fuera de `src/` y `tests/student/`, y que tu código use `eval`, `Function`, `import()` dinámico, módulos de Node como `fs` o `child_process`, `process.exit` o `process.env` con nombres dinámicos, manipule prototipos, mencione el runner de pruebas o concatene literales de texto con `+` (usa plantillas de texto).
-
-<!-- texto-escaner:inicio (generado por scripts/texto_escaner.py; no editar a mano) -->
-
-### Qué marca el escáner del calificador
-
-El calificador revisa tu código y tus tests antes de correrlos. Si encuentra algo de esta lista, tu nota queda **retenida** hasta que el docente la revise: no pierdes puntos automáticamente, pero tampoco se publica. Nada de esto hace falta para resolver los retos.
-
-**Por qué existe.** Tus tests corren en la misma máquina que los tests ocultos. Lo que se marca es lo que permitiría leer esos tests, cambiar el resultado de las pruebas o salir a internet desde el calificador.
-
-**En este proyecto (TypeScript).**
-
-- Se marca: importar módulos de Node con acceso al sistema (`fs`, `child_process`, `os`, `net`, `http`, `vm`, `worker_threads`…; sí puedes `crypto`, `path`, `url`, `util`, `events`, `buffer`, `assert`, `timers`); `import()` o `require()` con un nombre calculado; `eval` y `Function()`; `process.argv`, `process.exit`, `process.binding`, `process.env[nombre calculado]`; `globalThis`, `window` o `process` indexados con un nombre calculado; `__proto__` y `constructor.constructor`; en `src/`, mencionar el runner (`vitest`, `junit`, `AWA_`, `afterAll(`), también armado por partes; en tests, `process.cwd`, `__dirname`, `import.meta.url`.
-- Sí puedes unir textos (`"btn " + "primary"`), usar rutas como `/sitemap.xml` y `window["dataLayer"]`.
-
-**En todos los proyectos** se marca además: modificar o borrar archivos oficiales, agregar archivos fuera de tus carpetas, enlaces simbólicos, y archivos como `sitecustomize.py`, `pytest.ini`, `init.gradle` o `.npmrc`. Y tus tests deben dar siempre el mismo resultado: un test que falla al azar no cuenta.
-
-<!-- texto-escaner:fin -->
 
 ## Uso de asistentes de IA
 
